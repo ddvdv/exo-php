@@ -5,60 +5,107 @@
 	<body>
 
 	<form method="get">
-		<input name="age" placeholder="Quel est ton âge?">
+		<input name="age" placeholder="Quel est ton âge?"><br>
+		<input type="radio" name="gender" value="H">Homme
+		<input type="radio" name="gender" value="F">Femme<br>
+		<label>Parles-tu anglais?
+			<input type="radio" name="lang" value="Eng">Yes
+			<input type="radio" name="lang" value="NoEng" checked>Non<br>
+		</label>		
 		<input type="submit" value="submit">
 	</form>
+	<br>
+
+	<h3>
 
 	<?php
 
 	if (isset($_GET['age'])) {
 	$age = $_GET['age'];
-		if ($age < 12) {
-			echo "Salut petit!";
-		}
-		elseif ($age > 11 AND $age < 19) {
-			echo "Salut ado!";
-		}
-		elseif ($age > 18 AND $age < 115) {
-			echo "Salut l'adulte";
-		}
-		elseif ($age > 114) {
-			echo "Wow. Toujours en vie?";
-		}
+	}
 
+	if (isset($_GET['gender'])) {
+	$gender = $_GET['gender'];
+	}
+
+	if ($_GET['lang'] == 'Eng') {
+		$eng = true;
+	}
+
+	if ($age < 12) {
+		if ($gender == 'H'){
+			if ($eng) {
+				echo "Hello boy!";
+			}
+			else {
+				echo "Salut petit garçon!";
+			}
+		}
+		if ($gender == 'F'){
+			if ($eng) {
+				echo "Hello girl!";
+			}
+			else {
+				echo "Salut petite fille!";
+			}
+		}
+	}
+	elseif ($age > 11 AND $age < 19) {
+		if ($gender == 'H'){
+			if ($eng) {
+				echo "Hello teenage boy!";
+			}
+			else {
+				echo "Salut l'adolescent!";
+			}
+		}
+		if ($gender == 'F'){
+			if ($eng) {
+				echo "Hello young lady!";
+			}
+			else {
+				echo "Salut l'adolescente!";
+			}
+		}
+	}	
+	elseif ($age > 18 AND $age < 115) {
+		if ($gender == 'H'){
+			if ($eng) {
+				echo "Hello Sir!";
+			}
+			else {
+				echo "Bonjour monsieur!";
+			}
+		}
+		if ($gender == 'F'){
+			if ($eng) {
+				echo "Hello Mam'!";
+			}
+			else {
+				echo "Bonjour madame!";
+			}
+		}	
+	}
+	elseif ($age > 114) {
+		if ($gender == 'H'){
+			if ($eng) {
+				echo "Hello old chap!";
+			}
+			else {
+				echo "Salut le vieux";
+			}
+		}
+		if ($gender == 'F'){
+			if ($eng) {
+				echo "Hello milady!";
+			}
+			else {
+				echo "Salut la vieille";
+			}
+		}	
 	}
 	?>
 
-	<?php
-	/*	Si l'heure est entre 05h00 et 9h00 du matin, affiche "Bonjour!".
-	Si l'heure est entre 9h01 et 12h00, affiche "Bonne journée!".
-	Si l'heure est entre 12h01 et 16h00, affiche "Bon après-midi!".
-	Si l'heure est entre 16h01 et 21h00, affiche "Bonne soirée!".
-	Si l'heure est entre 21h01 et 04h59, affiche "Bonne nuit!".
-	*/
-
-	$hour = date('H');
-	$minute = date('i');
-
-	if ($hour > 5 AND $hour < 9) {
-		echo "Bonjour!";
-	}
-	elseif ($hour > 9 AND $hour < 12) {
-		echo "Bonne journée!";
-	}
-	elseif ($hour > 12 AND $hour < 16) {
-		echo "Bonne après-midi!";
-	}
-	elseif ($hour > 16 AND $hour < 21) {
-		echo "Bonne soirée!";
-	}
-	elseif ($hour >  21 OR $hour < 5) {
-		echo "Bonne nuit!";
-	}
-
-	?>
-
+		</h3>
 	</body>
-
-
 </html>
