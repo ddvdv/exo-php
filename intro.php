@@ -10,13 +10,13 @@
 	$age = 28;
 	$faim = true;
 	$eyes = "brown";
-	$famille = array['David', 'AnneSophie', 'Félix'];
+	$famille = array('David', 'AnneSophie', 'Félix');
 
 	echo $prenom;
 	echo $age;
 	echo $faim;
 	echo $eyes; 
-	echo $famille;
+	print_r($famille);
 
 
 	?>
