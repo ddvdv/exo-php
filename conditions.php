@@ -17,21 +17,32 @@
 	<?php
 
 	if (isset($_GET['age'])) {
-	$age = $_GET['age'];
+		$age = $_GET['age'];
 	}
 
 	if (isset($_GET['gender'])) {
-	$gender = $_GET['gender'];
+		$gender = $_GET['gender'];
 	}
 
 	if (isset($gender) AND isset($age)) {
 		if ( $age <= 40 AND $age >=21 AND $gender = 'F' ) {
-			echo "Bonjour et bienvenue parmis nous!";
+			$OK = true;
 		}
 		else {
-			echo "Désolé. Vous ne remplissez pas les critères de conditions";
+			$OK = false;
 		}
 	}
+
+		if ($OK)
+		{
+			echo "Bonjour et bienvenue parmis nous!";
+		}
+
+		if (!$OK)
+		{
+			echo "Désolé. Vous ne remplissez pas les critères de conditions";
+		}
+
 
 	?>
 
