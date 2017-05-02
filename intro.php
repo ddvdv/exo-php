@@ -6,17 +6,21 @@
 
 	<?php
 
-	$prenom = 'David';
-	$age = 28;
-	$faim = true;
-	$eyes = "brown";
-	$famille = array('David', 'AnneSophie', 'Félix');
+		$temperature  = 34; // Joue avec cette valeur pour tester ton script.
 
-	echo $prenom;
-	echo $age;
-	echo $faim;
-	echo $eyes; 
-	print_r($famille);
+		if( $temperature > 21 ) {
+		  // code à exécuter si la condition est TRUE
+		  $vetement_du_jour = "T-shirt";
+		  
+		  }elseif ( $temperature > 10 ){
+		    $vetement_du_jour = "Pull-over";
+
+		 } else {
+		   // code à exécuter si toutes les conditions précédentes sont FALSE
+		   $vetement_du_jour = "Pull-over, écharpe et bonnet";
+		 }
+		 
+		 echo $vetement_du_jour;
 
 
 	?>
