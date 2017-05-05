@@ -36,7 +36,7 @@
 		if ($OK)
 		{
 			echo "Bonjour et bienvenue parmis nous!";
-		}
+		}w
 
 		if (!$OK)
 		{
